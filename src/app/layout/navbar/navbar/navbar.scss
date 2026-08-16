@@ -1,0 +1,454 @@
+:host {
+    display: block;
+}
+
+.app-navbar {
+    height: 64px;
+
+    display    : flex;
+    align-items: center;
+
+    padding: 0 18px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(18, 24, 39, 0.98),
+            rgba(15, 21, 36, 0.98));
+
+    border-bottom: 1px solid var(--app-border);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.22);
+
+    position: relative;
+    z-index : 100;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.navbar-brand {
+    display    : flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 245px;
+}
+
+.brand-logo {
+    width : 34px;
+    height: 34px;
+
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    position: relative;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(36, 150, 232, 0.18),
+            rgba(34, 211, 238, 0.08));
+
+    border: 1px solid rgba(36, 150, 232, 0.35);
+
+    box-shadow:
+        0 0 15px rgba(36, 150, 232, 0.12);
+}
+
+.logo-line {
+    position: absolute;
+
+    width : 18px;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background: var(--app-primary);
+
+    box-shadow:
+        0 0 8px rgba(36, 150, 232, 0.5);
+
+    transform: rotate(-35deg);
+}
+
+.logo-line:nth-child(1) {
+    transform: translateY(-5px) rotate(-35deg);
+}
+
+.logo-line:nth-child(2) {
+    transform: translateY(0) rotate(35deg);
+
+    background: var(--app-cyan);
+}
+
+.logo-line:nth-child(3) {
+    transform: translateY(5px) rotate(-35deg);
+
+    background: var(--app-purple);
+}
+
+.brand-info {
+    display       : flex;
+    flex-direction: column;
+
+    line-height: 1.1;
+}
+
+.brand-name {
+    color: var(--app-text);
+
+    font-size  : 16px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.brand-subtitle {
+    color: var(--app-text-muted);
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   CENTER
+========================================= */
+
+.navbar-center {
+    flex: 1;
+
+    display    : flex;
+    align-items: center;
+
+    padding-inline: 20px;
+}
+
+.page-title {
+    display    : flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.title-icon {
+    width : 32px;
+    height: 32px;
+
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: rgba(36, 150, 232, 0.1);
+
+    border: 1px solid rgba(36, 150, 232, 0.2);
+
+    color: var(--app-primary);
+
+    font-size: 14px;
+}
+
+.page-title h1 {
+    margin: 0;
+
+    color: var(--app-text);
+
+    font-size  : 15px;
+    font-weight: 600;
+}
+
+.page-title span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--app-text-muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.navbar-actions {
+    display    : flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* =========================================
+   ICON BUTTON
+========================================= */
+
+.navbar-icon-button {
+    width : 34px;
+    height: 34px;
+
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    border: 1px solid transparent;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: var(--app-text-secondary);
+
+    cursor: pointer;
+
+    transition:
+        background var(--app-transition),
+        color var(--app-transition),
+        border-color var(--app-transition),
+        box-shadow var(--app-transition);
+}
+
+.navbar-icon-button:hover {
+    color: var(--app-primary);
+
+    background: rgba(36, 150, 232, 0.08);
+
+    border-color: rgba(36, 150, 232, 0.2);
+
+    box-shadow:
+        0 0 12px rgba(36, 150, 232, 0.08);
+}
+
+
+/* =========================================
+   NOTIFICATION
+========================================= */
+
+.notification-button {
+    position: relative;
+}
+
+.notification-badge {
+    position: absolute;
+
+    top  : 3px;
+    right: 2px;
+
+    min-width: 14px;
+    height   : 14px;
+
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    padding: 0 3px;
+
+    border-radius: 20px;
+
+    background: var(--app-danger);
+
+    color: white;
+
+    font-size  : 8px;
+    font-weight: 700;
+
+    box-shadow:
+        0 0 8px rgba(244, 119, 108, 0.35);
+}
+
+
+/* =========================================
+   LANGUAGE
+========================================= */
+
+.language-wrapper {
+    margin-inline: 3px;
+}
+
+:host ::ng-deep .language-select {
+    width: 75px;
+
+    height: 34px;
+
+    background: #0f1524 !important;
+
+    border: 1px solid var(--app-border) !important;
+
+    border-radius: 7px !important;
+
+    box-shadow: none !important;
+}
+
+:host ::ng-deep .language-select:hover {
+    border-color: var(--app-border-hover) !important;
+}
+
+:host ::ng-deep .language-select .p-select-label {
+    padding: 0 8px !important;
+
+    color: var(--app-text) !important;
+
+    font-size: 12px !important;
+}
+
+:host ::ng-deep .language-select .p-select-dropdown {
+    width: 28px;
+}
+
+.language-selected {
+    display    : flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.language-selected i {
+    color: var(--app-cyan);
+
+    font-size: 12px;
+}
+
+.language-item {
+    display    : flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+}
+
+.language-code {
+    width : 24px;
+    height: 20px;
+
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    background: rgba(36, 150, 232, 0.1);
+
+    color: var(--app-primary);
+
+    font-size  : 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   USER
+========================================= */
+
+.user-profile {
+    height: 40px;
+
+    display    : flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 8px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background var(--app-transition);
+}
+
+.user-profile:hover {
+    background: rgba(255, 255, 255, 0.035);
+}
+
+:host ::ng-deep .user-avatar {
+    width : 30px !important;
+    height: 30px !important;
+
+    background:
+        linear-gradient(135deg,
+            var(--app-primary),
+            var(--app-purple)) !important;
+
+    color: white !important;
+
+    font-size: 10px !important;
+}
+
+.user-info {
+    display       : flex;
+    flex-direction: column;
+
+    min-width: 65px;
+}
+
+.user-name {
+    color: var(--app-text);
+
+    font-size  : 12px;
+    font-weight: 600;
+}
+
+.user-role {
+    color: var(--app-text-muted);
+
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+.user-arrow {
+    color: var(--app-text-muted);
+    font-size: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar-brand {
+        min-width: auto;
+    }
+
+    .brand-subtitle,
+    .navbar-center,
+    .user-info,
+    .user-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .app-navbar {
+        padding: 0 10px;
+    }
+
+    .brand-name {
+        font-size: 13px;
+    }
+
+    .navbar-actions {
+        gap: 2px;
+    }
+
+    .language-wrapper {
+        display: none;
+    }
+}

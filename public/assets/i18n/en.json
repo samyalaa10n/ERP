@@ -1,0 +1,24 @@
+{
+  "common": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "search": "بحث",
+    "loading": "جاري التحميل"
+  },
+
+  "menu": {
+    "dashboard": "لوحة التحكم",
+    "sales": "المبيعات",
+    "purchases": "المشتريات",
+    "inventory": "المخزون",
+    "customers": "العملاء",
+    "suppliers": "الموردين",
+    "accounting": "الحسابات",
+    "hr": "الموارد البشرية",
+    "restaurant": "المطاعم",
+    "manufacturing": "التصنيع",
+    "reports": "التقارير"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "loading": "Loading"
+  },
+
+  "menu": {
+    "dashboard": "Dashboard",
+    "sales": "Sales",
+    "purchases": "Purchases",
+    "inventory": "Inventory",
+    "customers": "Customers",
+    "suppliers": "Suppliers",
+    "accounting": "Accounting",
+    "hr": "Human Resources",
+    "restaurant": "Restaurant",
+    "manufacturing": "Manufacturing",
+    "reports": "Reports"
+  }
+}
