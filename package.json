@@ -22,7 +22,6 @@
     ]
   },
   "private": true,
-  "packageManager": "npm@11.17.0",
   "dependencies": {
     "@angular/common": "^21.0.0",
     "@angular/compiler": "^21.0.0",
@@ -45,5 +44,9 @@
     "jsdom": "^27.1.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
+  },
+  "volta": {
+    "node": "24.19.0",
+    "yarn": "1.22.22"
   }
 }
