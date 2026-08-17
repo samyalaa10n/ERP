@@ -1,5 +1,5 @@
 {
-  "name": "erp",
+  "name": "erp-new",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:ERP": "node dist/ERP/server/server.mjs"
+    "serve:ssr:ERP-New": "node dist/ERP-New/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
@@ -22,6 +22,7 @@
     ]
   },
   "private": true,
+  "packageManager": "npm@10.9.8",
   "dependencies": {
     "@angular/common": "^22.1.2",
     "@angular/compiler": "^22.1.2",
@@ -43,17 +44,16 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular/build": "^22.1.4",
-    "@angular/cli": "^22.1.4",
-    "@angular/compiler-cli": "^22.1.2",
+    "@angular/build": "^21.0.2",
+    "@angular/cli": "^21.0.2",
+    "@angular/compiler-cli": "^21.0.0",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "jsdom": "^27.1.0",
-    "typescript": "~6.0.3",
+    "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   },
   "volta": {
-    "node": "24.19.0",
-    "yarn": "1.22.22"
+    "node": "24.19.0"
   }
 }

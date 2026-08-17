@@ -1,0 +1,341 @@
+:host {
+  display: block;
+}
+
+
+/* =========================================================
+   WRAPPER
+   ========================================================= */
+
+.user-menu-wrapper {
+  position: relative;
+}
+
+
+/* =========================================================
+   USER PROFILE
+   ========================================================= */
+
+.user-profile {
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 9px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  transition:
+    background var(--app-transition),
+    border-color var(--app-transition);
+}
+
+
+.user-profile:hover {
+
+  background:
+    rgba(255, 255, 255, 0.035);
+}
+
+
+.user-profile:focus-visible {
+
+  outline:
+    1px solid var(--app-primary);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+:host ::ng-deep .user-avatar {
+
+  width: 32px !important;
+
+  height: 32px !important;
+
+  flex-shrink: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--app-primary),
+      var(--app-purple)
+    ) !important;
+
+  color:
+    #ffffff !important;
+
+  font-size:
+    10px !important;
+
+  font-weight:
+    700 !important;
+
+  box-shadow:
+    0 0 12px
+    rgba(36, 150, 232, 0.18);
+}
+
+
+/* =========================================================
+   USER INFO
+   ========================================================= */
+
+.user-info {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  min-width:
+    70px;
+}
+
+
+.user-name {
+
+  color:
+    var(--app-text);
+
+  font-size:
+    13px;
+
+  font-weight:
+    600;
+
+  line-height:
+    16px;
+}
+
+
+.user-role {
+
+  margin-top:
+    2px;
+
+  color:
+    var(--app-text-muted);
+
+  font-size:
+    11px;
+
+  line-height:
+    14px;
+}
+
+
+/* =========================================================
+   ARROW
+   ========================================================= */
+
+.user-arrow {
+
+  color:
+    var(--app-text-muted);
+
+  font-size:
+    9px;
+
+  transition:
+    transform var(--app-transition),
+    color var(--app-transition);
+}
+
+
+.user-profile:hover
+.user-arrow {
+
+  color:
+    var(--app-primary);
+}
+
+
+/* =========================================================
+   USER DROPDOWN
+   ========================================================= */
+
+:host ::ng-deep .user-dropdown {
+
+  min-width:
+    220px !important;
+
+  padding:
+    5px !important;
+
+  margin-top:
+    7px;
+
+  background:
+    rgba(12, 17, 29, 0.98) !important;
+
+  border:
+    1px solid var(--app-border) !important;
+
+  border-radius:
+    9px !important;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(36, 150, 232, 0.06) !important;
+
+  backdrop-filter:
+    blur(14px);
+}
+
+
+/* =========================================================
+   MENU ITEM
+   ========================================================= */
+
+:host ::ng-deep .user-dropdown .p-menu-item-content {
+
+  border-radius:
+    6px;
+
+  transition:
+    background var(--app-transition);
+}
+
+
+:host ::ng-deep
+.user-dropdown
+.p-menu-item-link {
+
+  min-height:
+    38px;
+
+  padding:
+    0 10px !important;
+
+  gap:
+    10px;
+
+  color:
+    var(--app-text-secondary) !important;
+
+  font-size:
+    12px;
+
+  transition:
+    color var(--app-transition),
+    background var(--app-transition);
+}
+
+
+:host ::ng-deep
+.user-dropdown
+.p-menu-item-content:hover {
+
+  background:
+    rgba(36, 150, 232, 0.08) !important;
+}
+
+
+:host ::ng-deep
+.user-dropdown
+.p-menu-item-content:hover
+.p-menu-item-link {
+
+  color:
+    var(--app-text) !important;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+:host ::ng-deep
+.user-dropdown
+.p-menu-item-icon {
+
+  width:
+    16px;
+
+  color:
+    var(--app-text-muted) !important;
+}
+
+
+:host ::ng-deep
+.user-dropdown
+.p-menu-item-content:hover
+.p-menu-item-icon {
+
+  color:
+    var(--app-primary) !important;
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+:host ::ng-deep
+.user-dropdown
+.logout-item
+.p-menu-item-link {
+
+  color:
+    var(--app-danger) !important;
+}
+
+
+:host ::ng-deep
+.user-dropdown
+.logout-item
+.p-menu-item-icon {
+
+  color:
+    var(--app-danger) !important;
+}
+
+
+:host ::ng-deep
+.user-dropdown
+.logout-item
+.p-menu-item-content:hover {
+
+  background:
+    rgba(244, 119, 108, 0.08) !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .user-info,
+  .user-arrow {
+
+    display:
+      none;
+  }
+
+
+  .user-profile {
+
+    padding:
+      0 4px;
+  }
+}

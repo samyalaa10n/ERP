@@ -1,3 +1,13 @@
-<p-select [options]="options" [optionLabel]="optionLabel" [optionValue]="optionValue" [(ngModel)]="selectedValue"
-    [showClear]="showClear" [placeholder]="placeholder" (ngModelChange)="selectedValuesChange.emit($event)">
+<p-select
+  [options]="options"
+  [optionLabel]="optionLabel"
+  [optionValue]="optionValue"
+  [(ngModel)]="selectedValue"
+  [showClear]="showClear"
+  [placeholder]="placeholder"
+  [filter]="true"
+  [filterBy]="optionLabel"
+  [appendTo]="'body'"
+  (ngModelChange)="selectedValuesChange.emit($event)"
+  styleClass="app-combo-box">
 </p-select>

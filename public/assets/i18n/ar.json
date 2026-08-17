@@ -1,24 +1,79 @@
 {
   "common": {
-    "save": "Save",
-    "cancel": "Cancel",
-    "delete": "Delete",
-    "edit": "Edit",
-    "search": "Search",
-    "loading": "Loading"
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "search": "بحث",
+    "clear": "مسح",
+    "close": "إغلاق",
+    "yes": "نعم",
+    "no": "لا",
+    "loading": "جاري التحميل",
+    "refresh": "تحديث",
+    "print": "طباعة",
+    "export": "تصدير",
+    "import": "استيراد",
+    "view": "عرض",
+    "details": "التفاصيل",
+    "actions": "الإجراءات",
+    "select": "اختيار",
+    "selectAll": "اختيار الكل",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "submit": "إرسال",
+    "reset": "إعادة تعيين",
+    "confirm": "تأكيد"
   },
-
   "menu": {
-    "dashboard": "Dashboard",
-    "sales": "Sales",
-    "purchases": "Purchases",
-    "inventory": "Inventory",
-    "customers": "Customers",
-    "suppliers": "Suppliers",
-    "accounting": "Accounting",
-    "hr": "Human Resources",
-    "restaurant": "Restaurant",
-    "manufacturing": "Manufacturing",
-    "reports": "Reports"
+    "dashboard": "لوحة التحكم",
+    "sales": "المبيعات",
+    "purchases": "المشتريات",
+    "inventory": "المخزون",
+    "customers": "العملاء",
+    "suppliers": "الموردون",
+    "accounting": "الحسابات",
+    "hr": "الموارد البشرية",
+    "restaurant": "المطاعم",
+    "manufacturing": "التصنيع",
+    "reports": "التقارير",
+    "settings": "الإعدادات"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "totalSales": "إجمالي المبيعات",
+    "totalPurchases": "إجمالي المشتريات",
+    "totalOrders": "إجمالي الطلبات",
+    "totalCustomers": "إجمالي العملاء",
+    "recentActivities": "آخر الأنشطة",
+    "pendingApprovals": "الموافقات المعلقة",
+    "revenue": "الإيرادات",
+    "profit": "صافي الربح",
+    "activeUsers": "المستخدمون النشطون",
+    "operationalEfficiency": "الكفاءة التشغيلية"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "نسيت كلمة المرور",
+    "loginButton": "دخول",
+    "logout": "تسجيل الخروج"
+  },
+  "language": {
+    "english": "الإنجليزية",
+    "arabic": "العربية",
+    "changeLanguage": "تغيير اللغة"
+  },
+  "messages": {
+    "saveSuccess": "تم الحفظ بنجاح",
+    "deleteSuccess": "تم الحذف بنجاح",
+    "updateSuccess": "تم التحديث بنجاح",
+    "error": "حدث خطأ ما",
+    "noData": "لا توجد بيانات",
+    "confirmDelete": "هل أنت متأكد أنك تريد حذف هذا العنصر؟"
   }
 }

@@ -1,0 +1,60 @@
+<div class="user-menu-wrapper">
+
+  <!-- =========================================
+       USER BUTTON
+       ========================================= -->
+
+  <div
+    class="user-profile"
+    (click)="userMenu.toggle($event)"
+    tabindex="0"
+    role="button"
+    aria-haspopup="true"
+    >
+
+    <!-- Avatar -->
+
+    <p-avatar
+      [label]="user.initials"
+      shape="circle"
+      styleClass="user-avatar">
+    </p-avatar>
+
+
+    <!-- User Information -->
+
+    <div class="user-info">
+
+      <span class="user-name">
+        {{ user.name }}
+      </span>
+
+      <span class="user-role">
+        {{ languageService.translate(user.role) }}
+      </span>
+
+    </div>
+
+
+    <!-- Arrow -->
+
+    <i
+      class="pi pi-chevron-down user-arrow">
+    </i>
+
+  </div>
+
+
+  <!-- =========================================
+       USER MENU
+       ========================================= -->
+
+  <p-menu
+    #userMenu
+    [model]="menuItems()"
+    [popup]="true"
+    styleClass="user-dropdown">
+
+  </p-menu>
+
+</div>

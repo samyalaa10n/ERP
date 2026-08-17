@@ -1,2 +1,21 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div class="app-layout">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Main Area -->
+    <main class="app-main">
+
+        <!-- Navbar -->
+        <app-navbar></app-navbar>
+
+        <!-- Pages -->
+        <div class="app-content">
+
+            <router-outlet></router-outlet>
+
+        </div>
+
+    </main>
+
+</div>

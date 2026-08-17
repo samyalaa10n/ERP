@@ -6,12 +6,11 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ERP": {
+    "ERP-New": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
-          "skipTests": true
+          "style": "scss"
         }
       },
       "root": "",
@@ -31,8 +30,6 @@
               }
             ],
             "styles": [
-              "node_modules/primeicons/primeicons.css",
-              "src/styles.scss",
               "src/styles.scss"
             ],
             "server": "src/main.server.ts",
@@ -69,10 +66,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ERP:build:production"
+              "buildTarget": "ERP-New:build:production"
             },
             "development": {
-              "buildTarget": "ERP:build:development"
+              "buildTarget": "ERP-New:build:development"
             }
           },
           "defaultConfiguration": "development"

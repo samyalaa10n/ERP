@@ -1,76 +1,139 @@
-/* You can add global styles to this file, and also import other style files */
+/* =========================================================
+   TAILWIND
+   ========================================================= */
+
 @use "tailwindcss";
 
-@use 'sass:color';
+
+/* =========================================================
+   ERP DESIGN TOKENS
+   ========================================================= */
 
 :root {
-  /* ==============================
-     FUTURISTIC DATA SYSTEM
-  ============================== */
 
-  --app-bg          : #0a0e1a;
+  /* -------------------------------------------------------
+     BACKGROUND
+     ------------------------------------------------------- */
+
+  --app-bg: #0a0e1a;
   --app-bg-secondary: #0f1524;
 
-  --app-surface      : #121827;
-  --app-surface-2    : #1c2535;
+
+  /* -------------------------------------------------------
+     SURFACE
+     ------------------------------------------------------- */
+
+  --app-surface: #121827;
+  --app-surface-2: #1c2535;
   --app-surface-hover: #222e40;
 
-  --app-border      : #263449;
+
+  /* -------------------------------------------------------
+     BORDER
+     ------------------------------------------------------- */
+
+  --app-border: #263449;
   --app-border-hover: #3c8fc3;
 
-  /* Primary */
-  --app-primary      : #2496e8;
-  --app-primary-hover: #3caef5;
-  --app-primary-dark : #1269a8;
 
-  /* Tech Accent */
-  --app-cyan     : #22d3ee;
+  /* -------------------------------------------------------
+     PRIMARY
+     ------------------------------------------------------- */
+
+  --app-primary: #2496e8;
+  --app-primary-hover: #3caef5;
+  --app-primary-dark: #1269a8;
+
+
+  /* -------------------------------------------------------
+     TECH ACCENT
+     ------------------------------------------------------- */
+
+  --app-cyan: #22d3ee;
   --app-cyan-dark: #0891b2;
 
-  /* Secondary */
-  --app-purple      : #9b5de5;
+
+  /* -------------------------------------------------------
+     SECONDARY
+     ------------------------------------------------------- */
+
+  --app-purple: #9b5de5;
   --app-purple-light: #c084fc;
 
-  /* Status */
+
+  /* -------------------------------------------------------
+     STATUS
+     ------------------------------------------------------- */
+
   --app-success: #20c997;
   --app-warning: #f59e0b;
-  --app-danger : #f4776c;
-  --app-info   : #38bdf8;
+  --app-danger: #f4776c;
+  --app-info: #38bdf8;
 
-  /* Text */
-  --app-text          : #e5e7eb;
+
+  /* -------------------------------------------------------
+     TEXT
+     ------------------------------------------------------- */
+
+  --app-text: #e5e7eb;
   --app-text-secondary: #9ca3af;
-  --app-text-muted    : #64748b;
+  --app-text-muted: #64748b;
 
-  /* Glow */
-  --glow-blue  : rgba(36, 150, 232, 0.25);
-  --glow-cyan  : rgba(34, 211, 238, 0.2);
-  --glow-purple: rgba(155, 93, 229, 0.2);
 
-  --app-radius   : 8px;
+  /* -------------------------------------------------------
+     GLOW
+     ------------------------------------------------------- */
+
+  --glow-blue: rgba(36, 150, 232, 0.25);
+  --glow-cyan: rgba(34, 211, 238, 0.20);
+  --glow-purple: rgba(155, 93, 229, 0.20);
+
+
+  /* -------------------------------------------------------
+     RADIUS
+     ------------------------------------------------------- */
+
+  --app-radius: 8px;
   --app-radius-lg: 10px;
+
+
+  /* -------------------------------------------------------
+     TRANSITION
+     ------------------------------------------------------- */
 
   --app-transition: 180ms ease;
 }
 
+
+/* =========================================================
+   HTML / BODY
+   ========================================================= */
+
 html,
 body {
-  margin : 0;
+
+  margin: 0;
   padding: 0;
 
-  width     : 100%;
+  width: 100%;
   min-height: 100%;
 
   background:
-    radial-gradient(circle at 20% 10%,
+    radial-gradient(
+      circle at 20% 10%,
       rgba(36, 150, 232, 0.07),
-      transparent 35%),
-    radial-gradient(circle at 80% 20%,
-      rgba(155, 93, 229, 0.05),
-      transparent 30%),
-    #0a0e1a;
+      transparent 35%
+    ),
 
-  color: #e5e7eb;
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(155, 93, 229, 0.05),
+      transparent 30%
+    ),
+
+    var(--app-bg);
+
+  color: var(--app-text);
 
   font-family:
     Inter,
@@ -80,137 +143,587 @@ body {
     sans-serif;
 }
 
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: var(--app-bg);
+}
+
+
+::-webkit-scrollbar-thumb {
+
+  background: #263449;
+
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3c8fc3;
+}
+
+
+/* =========================================================
+   APP CARD
+   ========================================================= */
+
 .app-card {
+
   background:
-    linear-gradient(145deg,
+    linear-gradient(
+      145deg,
       rgba(28, 37, 53, 0.96),
-      rgba(15, 21, 36, 0.96));
+      rgba(15, 21, 36, 0.96)
+    );
 
-  border: 1px solid #263449;
+  border:
+    1px solid var(--app-border);
 
-  border-radius: 9px;
+  border-radius:
+    var(--app-radius-lg);
 
   box-shadow:
     0 8px 30px rgba(0, 0, 0, 0.25);
 
   transition:
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
-
-  &:hover {
-    border-color: rgba(36, 150, 232, 0.55);
-
-    box-shadow:
-      0 8px 30px rgba(0, 0, 0, 0.35),
-      0 0 20px rgba(36, 150, 232, 0.08);
-  }
+    border-color var(--app-transition),
+    box-shadow var(--app-transition),
+    transform var(--app-transition);
 }
 
+
+.app-card:hover {
+
+  border-color:
+    rgba(36, 150, 232, 0.55);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(36, 150, 232, 0.08);
+}
+
+
+/* =========================================================
+   PRIME BUTTON
+   ========================================================= */
+
 .p-button {
-  border-radius: 7px !important;
+
+  border-radius:
+    7px !important;
 
   transition:
-    background 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease !important;
+    background var(--app-transition),
+    border-color var(--app-transition),
+    box-shadow var(--app-transition),
+    transform var(--app-transition) !important;
 }
 
 
 .p-button:not(.p-button-text):not(.p-button-outlined) {
-  background: linear-gradient(135deg,
-      #2496e8,
-      #1675bd) !important;
 
-  border-color: #2496e8 !important;
+  background:
+    linear-gradient(
+      135deg,
+      var(--app-primary),
+      #1675bd
+    ) !important;
+
+  border-color:
+    var(--app-primary) !important;
 
   box-shadow:
-    0 0 12px rgba(36, 150, 232, 0.15);
+    0 0 12px
+    rgba(36, 150, 232, 0.15);
 }
+
 
 .p-button:not(.p-button-text):not(.p-button-outlined):hover {
-  background: linear-gradient(135deg,
-      #3caef5,
-      #2496e8) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--app-primary-hover),
+      var(--app-primary)
+    ) !important;
 
   box-shadow:
-    0 0 18px rgba(36, 150, 232, 0.3);
+    0 0 18px
+    rgba(36, 150, 232, 0.30);
 }
+
+
+/* =========================================================
+   PRIME INPUTS
+   ========================================================= */
 
 .p-inputtext,
-.p-select,
-.p-multiselect,
-.p-inputnumber-input {
-  background: #0f1524 !important;
+.p-inputnumber-input,
+.p-multiselect {
 
-  border: 1px solid #263449 !important;
+  background:
+    var(--app-bg-secondary) !important;
 
-  color: #e5e7eb !important;
+  border:
+    1px solid var(--app-border) !important;
 
-  border-radius: 7px !important;
+  color:
+    var(--app-text) !important;
+
+  border-radius:
+    7px !important;
 
   transition:
-    border-color 180ms ease,
-    box-shadow 180ms ease;
+    border-color var(--app-transition),
+    box-shadow var(--app-transition);
 }
 
-.p-select-label {
-  padding: 0 8px !important;
-
-  color: var(--app-text) !important;
-
-  font-size: 11px !important;
-}
 
 .p-inputtext:hover,
-.p-select:hover,
-.p-multiselect:hover,
-.p-inputnumber-input:hover {
-  border-color: #3c8fc3 !important;
+.p-inputnumber-input:hover,
+.p-multiselect:hover {
+
+  border-color:
+    var(--app-border-hover) !important;
 }
+
 
 .p-inputtext:focus,
-.p-select:focus,
-.p-multiselect:focus,
-.p-inputnumber-input:focus {
-  border-color: #2496e8 !important;
+.p-inputnumber-input:focus,
+.p-multiselect:focus {
+
+  border-color:
+    var(--app-primary) !important;
 
   box-shadow:
-    0 0 0 2px rgba(36, 150, 232, 0.12),
-    0 0 15px rgba(36, 150, 232, 0.08) !important;
+    0 0 0 2px
+      rgba(36, 150, 232, 0.12),
+
+    0 0 15px
+      rgba(36, 150, 232, 0.08) !important;
 }
 
+
+/* =========================================================
+   PRIME SELECT
+   ========================================================= */
+
+.p-select {
+
+  min-height: 38px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18, 24, 39, 0.96),
+      rgba(15, 21, 36, 0.96)
+    ) !important;
+
+  border:
+    1px solid var(--app-border) !important;
+
+  border-radius:
+    var(--app-radius) !important;
+
+  color:
+    var(--app-text) !important;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.025);
+
+  transition:
+    border-color var(--app-transition),
+    box-shadow var(--app-transition),
+    background var(--app-transition);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SELECT LABEL
+   ========================================================= */
+
+.p-select-label {
+
+  display: flex !important;
+
+  align-items: center;
+
+  min-height: 36px;
+
+  padding:
+    0 11px !important;
+
+  color:
+    var(--app-text) !important;
+
+  font-size:
+    13px !important;
+
+  font-weight:
+    500;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+.p-select-label.p-placeholder {
+
+  color:
+    var(--app-text-muted) !important;
+}
+
+
+/* =========================================================
+   SELECT DROPDOWN ICON
+   ========================================================= */
+
+.p-select-dropdown {
+
+  width:
+    34px !important;
+
+  color:
+    var(--app-text-muted) !important;
+
+  transition:
+    color var(--app-transition),
+    transform var(--app-transition);
+}
+
+
+.p-select:hover .p-select-dropdown {
+
+  color:
+    var(--app-primary) !important;
+}
+
+
+/* =========================================================
+   SELECT HOVER
+   ========================================================= */
+
+.p-select:hover {
+
+  border-color:
+    var(--app-border-hover) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(28, 37, 53, 0.98),
+      rgba(15, 21, 36, 0.98)
+    ) !important;
+}
+
+
+/* =========================================================
+   SELECT FOCUS
+   ========================================================= */
+
+.p-select.p-focus {
+
+  border-color:
+    var(--app-primary) !important;
+
+  box-shadow:
+    0 0 0 2px
+      rgba(36, 150, 232, 0.10),
+
+    0 0 18px
+      rgba(36, 150, 232, 0.10) !important;
+}
+
+
+/* =========================================================
+   SELECT OVERLAY
+   ========================================================= */
+
+.p-select-overlay {
+
+  margin-top: 5px !important;
+
+  background:
+    rgba(12, 17, 29, 0.98) !important;
+
+  border:
+    1px solid var(--app-border) !important;
+
+  border-radius:
+    var(--app-radius) !important;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(36, 150, 232, 0.05) !important;
+
+  backdrop-filter:
+    blur(14px);
+}
+
+
+/* =========================================================
+   SELECT OPTIONS
+   ========================================================= */
+
+.p-select-option {
+
+  min-height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding:
+    0 11px !important;
+
+  margin:
+    3px 4px;
+
+  border-radius:
+    6px;
+
+  background:
+    transparent !important;
+
+  color:
+    var(--app-text-secondary) !important;
+
+  font-size:
+    13px;
+
+  transition:
+    background var(--app-transition),
+    color var(--app-transition);
+}
+
+
+.p-select-option:not(.p-select-option-selected):hover {
+
+  background:
+    rgba(36, 150, 232, 0.08) !important;
+
+  color:
+    var(--app-text) !important;
+}
+
+
+/* =========================================================
+   SELECTED OPTION
+   ========================================================= */
+
+.p-select-option-selected {
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(36, 150, 232, 0.16),
+      rgba(34, 211, 238, 0.06)
+    ) !important;
+
+  color:
+    #ffffff !important;
+
+  border-left:
+    2px solid var(--app-primary);
+
+  box-shadow:
+    inset 0 0 15px
+    rgba(36, 150, 232, 0.04);
+}
+
+
+.p-select-option-selected
+.p-select-option-icon {
+
+  color:
+    var(--app-cyan) !important;
+
+  filter:
+    drop-shadow(
+      0 0 5px
+      rgba(34, 211, 238, 0.5)
+    );
+}
+
+
+/* =========================================================
+   SELECT FILTER
+   ========================================================= */
+
+.p-select-filter {
+
+  margin:
+    7px;
+
+  width:
+    calc(100% - 14px) !important;
+
+  height:
+    34px;
+
+  background:
+    var(--app-bg-secondary) !important;
+
+  border:
+    1px solid var(--app-border) !important;
+
+  border-radius:
+    6px !important;
+
+  color:
+    var(--app-text) !important;
+
+  font-size:
+    12px;
+
+  outline:
+    none;
+
+  transition:
+    border-color var(--app-transition),
+    box-shadow var(--app-transition);
+}
+
+
+.p-select-filter:focus {
+
+  border-color:
+    var(--app-primary) !important;
+
+  box-shadow:
+    0 0 0 2px
+      rgba(36, 150, 232, 0.10) !important;
+}
+
+
+/* =========================================================
+   SELECT CLEAR
+   ========================================================= */
+
+.p-select-clear-icon {
+
+  color:
+    var(--app-text-muted) !important;
+
+  transition:
+    color var(--app-transition);
+}
+
+
+.p-select-clear-icon:hover {
+
+  color:
+    var(--app-danger) !important;
+}
+
+
+/* =========================================================
+   NAVBAR LANGUAGE SELECT
+   ========================================================= */
+
+.language-select .p-select {
+
+  min-width:
+    125px;
+
+  min-height:
+    34px;
+
+  background:
+    rgba(15, 21, 36, 0.75) !important;
+
+  border-color:
+    rgba(56, 189, 248, 0.14) !important;
+}
+
+
+.language-select .p-select-label {
+
+  min-height:
+    32px;
+
+  font-size:
+    12px !important;
+
+  color:
+    var(--app-text-secondary) !important;
+}
+
+
+/* =========================================================
+   DATA TABLE
+   ========================================================= */
+
 .p-datatable {
-  background: #121827;
 
-  .p-datatable-thead>tr>th {
-    background: #0f1524;
+  background:
+    var(--app-surface);
 
-    color: #9ca3af;
+  color:
+    var(--app-text);
+}
 
-    border-color: #263449;
 
-    font-size  : 12px;
-    font-weight: 600;
+.p-datatable .p-datatable-thead > tr > th {
 
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-  }
+  background:
+    var(--app-bg-secondary);
 
-  .p-datatable-tbody>tr {
-    background: #121827;
+  color:
+    var(--app-text-secondary);
 
-    color: #e5e7eb;
+  border-color:
+    var(--app-border);
 
-    transition: background 150ms ease;
+  font-size:
+    12px;
 
-    >td {
-      border-color: rgba(38, 52, 73, 0.7);
-    }
+  font-weight:
+    600;
 
-    &:hover {
-      background: #1c2535;
-    }
-  }
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.3px;
+}
+
+
+.p-datatable .p-datatable-tbody > tr {
+
+  background:
+    var(--app-surface);
+
+  color:
+    var(--app-text);
+
+  transition:
+    background 150ms ease;
+}
+
+
+.p-datatable .p-datatable-tbody > tr > td {
+
+  border-color:
+    rgba(38, 52, 73, 0.7);
+}
+
+
+.p-datatable .p-datatable-tbody > tr:hover {
+
+  background:
+    var(--app-surface-2);
 }

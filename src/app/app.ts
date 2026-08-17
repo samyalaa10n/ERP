@@ -1,11 +1,13 @@
 import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Button } from "./shared/components/button/button";
-import { Navbar } from "./layout/navbar/navbar/navbar";
+
+import { SidebarComponent } from "./layout/sidebar/sidebar";
+import { Navbar } from './layout/navbar/navbar';
 
 @Component({
   selector: 'app-root',
-  imports: [Button, RouterOutlet, Navbar],
+  imports: [ RouterOutlet, Navbar, SidebarComponent],
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss'

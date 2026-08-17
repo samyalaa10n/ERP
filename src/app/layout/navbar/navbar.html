@@ -1,0 +1,141 @@
+<header class="app-navbar">
+
+  <!-- ========================================= -->
+  <!-- BRAND -->
+  <!-- ========================================= -->
+
+  <div class="navbar-brand">
+
+    <div class="brand-logo">
+
+      <span class="logo-line"></span>
+      <span class="logo-line"></span>
+      <span class="logo-line"></span>
+
+    </div>
+
+
+    <div class="brand-info">
+
+      <div class="brand-name">
+        ERP
+      </div>
+
+      <div class="brand-subtitle">
+        Enterprise Resource Planning
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ========================================= -->
+  <!-- CENTER -->
+  <!-- ========================================= -->
+
+  <div class="navbar-center">
+
+    <div class="page-title">
+
+      <div class="title-icon">
+
+        <i class="pi pi-chart-line"></i>
+
+      </div>
+
+
+      <div>
+
+        <h1>
+          {{ languageService.translate('dashboard.title') }}
+        </h1>
+
+        <span>
+          {{ languageService.translate('dashboard.systemOverview') }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ========================================= -->
+  <!-- ACTIONS -->
+  <!-- ========================================= -->
+
+  <div class="navbar-actions">
+
+
+    <!-- Search -->
+
+    <button type="button" class="navbar-icon-button" [attr.aria-label]="
+        languageService.translate('common.search')
+      ">
+
+      <i class="pi pi-search"></i>
+
+    </button>
+
+
+    <!-- Notifications -->
+
+    <button type="button" class="navbar-icon-button notification-button" [attr.aria-label]="
+        languageService.translate('common.notifications')
+      ">
+
+      <i class="pi pi-bell"></i>
+
+      <span class="notification-badge">
+        3
+      </span>
+
+    </button>
+
+
+    <!-- ===================================== -->
+    <!-- Language -->
+    <!-- ===================================== -->
+
+    <div class="language-wrapper">
+
+      <app-combo-box [options]="languages" optionLabel="nativeName" optionValue="code" [selectedValue]="
+          languageService.language()
+        " (selectedValuesChange)="
+          changeLanguage($event)
+        " [showClear]="false" styleClass="language-select">
+
+      </app-combo-box>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- User -->
+    <!-- ===================================== -->
+
+    <div class="user-profile">
+
+      <app-user-menu (profile)="openProfile()" (personalData)="openPersonalData()" (settings)="openSettings()"
+        (logout)="logout()">
+      </app-user-menu>
+
+    </div>
+
+
+    <!-- Settings -->
+
+    <button type="button" class="navbar-icon-button" [attr.aria-label]="
+        languageService.translate('menu.settings')
+      ">
+
+      <i class="pi pi-cog"></i>
+
+    </button>
+
+
+  </div>
+
+</header>

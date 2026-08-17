@@ -1,0 +1,287 @@
+<aside
+  class="app-sidebar"
+  [class.sidebar-collapsed]="collapsed()"
+  [attr.dir]="languageService.direction()"
+>
+
+  <!-- ========================================= -->
+  <!-- BRAND -->
+  <!-- ========================================= -->
+
+  <div class="sidebar-brand">
+
+    <div class="sidebar-logo">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+
+
+    @if (!collapsed()) {
+
+      <div class="sidebar-brand-info">
+
+        <strong>ERP</strong>
+
+        <span>
+          Enterprise System
+        </span>
+
+      </div>
+
+    }
+
+
+    <button
+      type="button"
+      class="sidebar-collapse-button"
+      (click)="toggleSidebar()"
+    >
+
+      <i
+        class="pi"
+        [class.pi-angle-left]="!collapsed()"
+        [class.pi-angle-right]="collapsed()"
+      ></i>
+
+    </button>
+
+  </div>
+
+
+  <!-- ========================================= -->
+  <!-- NAVIGATION -->
+  <!-- ========================================= -->
+
+  <nav class="sidebar-navigation">
+
+
+    <!-- MAIN -->
+
+    <div class="sidebar-section">
+
+      @if (!collapsed()) {
+
+        <div class="sidebar-section-title">
+          MAIN
+        </div>
+
+      }
+
+
+      @for (
+        item of mainItems;
+        track item.label
+      ) {
+
+        <a
+          class="sidebar-item"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{
+            exact: item.route === '/dashboard'
+          }"
+          [title]="
+            collapsed()
+              ? translate(item.label)
+              : ''
+          "
+        >
+
+          <span class="sidebar-item-icon">
+
+            <i [class]="item.icon"></i>
+
+          </span>
+
+
+          @if (!collapsed()) {
+
+            <span class="sidebar-item-label">
+
+              {{ translate(item.label) }}
+
+            </span>
+
+          }
+
+        </a>
+
+      }
+
+    </div>
+
+
+    <!-- BUSINESS -->
+
+    <div class="sidebar-section">
+
+      @if (!collapsed()) {
+
+        <div class="sidebar-section-title">
+          BUSINESS
+        </div>
+
+      }
+
+
+      @for (
+        item of businessItems;
+        track item.label
+      ) {
+
+        <a
+          class="sidebar-item"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [title]="
+            collapsed()
+              ? translate(item.label)
+              : ''
+          "
+        >
+
+          <span class="sidebar-item-icon">
+
+            <i [class]="item.icon"></i>
+
+          </span>
+
+
+          @if (!collapsed()) {
+
+            <span class="sidebar-item-label">
+
+              {{ translate(item.label) }}
+
+            </span>
+
+          }
+
+        </a>
+
+      }
+
+    </div>
+
+
+    <!-- ANALYTICS -->
+
+    <div class="sidebar-section">
+
+      @if (!collapsed()) {
+
+        <div class="sidebar-section-title">
+          ANALYTICS
+        </div>
+
+      }
+
+
+      @for (
+        item of analyticsItems;
+        track item.label
+      ) {
+
+        <a
+          class="sidebar-item"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [title]="
+            collapsed()
+              ? translate(item.label)
+              : ''
+          "
+        >
+
+          <span class="sidebar-item-icon">
+
+            <i [class]="item.icon"></i>
+
+          </span>
+
+
+          @if (!collapsed()) {
+
+            <span class="sidebar-item-label">
+
+              {{ translate(item.label) }}
+
+            </span>
+
+          }
+
+        </a>
+
+      }
+
+    </div>
+
+  </nav>
+
+
+  <!-- ========================================= -->
+  <!-- BOTTOM -->
+  <!-- ========================================= -->
+
+  <div class="sidebar-bottom">
+
+
+    <!-- Settings -->
+
+    <a
+      class="sidebar-item"
+      routerLink="/settings"
+      routerLinkActive="active"
+      [title]="
+        collapsed()
+          ? translate('menu.settings')
+          : ''
+      "
+    >
+
+      <span class="sidebar-item-icon">
+
+        <i class="pi pi-sliders-h"></i>
+
+      </span>
+
+
+      @if (!collapsed()) {
+
+        <span class="sidebar-item-label">
+
+          {{ translate('menu.settings') }}
+
+        </span>
+
+      }
+
+    </a>
+
+
+    <!-- Status -->
+
+    @if (!collapsed()) {
+
+      <div class="system-status">
+
+        <span class="status-indicator"></span>
+
+        <span>
+          System Online
+        </span>
+
+        <small>
+          ●
+        </small>
+
+      </div>
+
+    }
+
+  </div>
+
+</aside>

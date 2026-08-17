@@ -83,7 +83,6 @@
 
 .logo-line:nth-child(2) {
     transform: translateY(0) rotate(35deg);
-
     background: var(--app-cyan);
 }
 
@@ -112,7 +111,7 @@
 .brand-subtitle {
     color: var(--app-text-muted);
 
-    font-size: 10px;
+    font-size: 12px;
 
     margin-top: 3px;
 
@@ -156,7 +155,7 @@
 
     color: var(--app-primary);
 
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .page-title h1 {
@@ -175,7 +174,7 @@
 
     color: var(--app-text-muted);
 
-    font-size: 11px;
+    font-size: 12px;
 }
 
 
@@ -398,14 +397,14 @@
 .user-name {
     color: var(--app-text);
 
-    font-size  : 12px;
+    font-size  : 14px;
     font-weight: 600;
 }
 
 .user-role {
     color: var(--app-text-muted);
 
-    font-size: 10px;
+    font-size: 12px;
 
     margin-top: 2px;
 }

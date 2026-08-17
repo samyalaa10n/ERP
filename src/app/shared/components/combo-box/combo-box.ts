@@ -30,7 +30,7 @@ import { Select } from 'primeng/select';
 })
 export class ComboBox implements ControlValueAccessor {
 
-  @Input() options: any[] = [];
+  @Input() options: any[]= [];
   @Input() optionLabel = '';
   @Input() optionValue = '';
   @Input() placeholder = '';
@@ -39,8 +39,8 @@ export class ComboBox implements ControlValueAccessor {
   @Output() selectedValuesChange = new EventEmitter<any>();
 
 
-  private onChange: (value: any) => void = () => {};
-  private onTouched: () => void = () => {};
+  private onChange: (value: any) => void = () => { };
+  private onTouched: () => void = () => { };
 
   writeValue(value: any): void {
     this.selectedValue = value;
