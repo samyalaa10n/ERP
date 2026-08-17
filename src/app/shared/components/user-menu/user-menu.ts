@@ -3,7 +3,8 @@ import {
   EventEmitter,
   Output,
   computed,
-  inject
+  inject,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { Avatar } from 'primeng/avatar';
@@ -24,6 +25,7 @@ import { LanguageService } from '../../../core/services/language-service';
   ],
 
   templateUrl: './user-menu.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './user-menu.scss'
 })
 export class UserMenu {

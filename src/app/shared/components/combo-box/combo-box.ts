@@ -3,7 +3,8 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  Output
+  Output,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -26,6 +27,7 @@ import { Select } from 'primeng/select';
     }
   ],
   templateUrl: './combo-box.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './combo-box.scss',
 })
 export class ComboBox implements ControlValueAccessor {
@@ -68,10 +70,6 @@ export class ComboBox implements ControlValueAccessor {
   }
 
   ngOnInit() {
-    console.log(
-      'selectedValue',
-      this.selectedValue,
-      this.options
-    );
+
   }
 }

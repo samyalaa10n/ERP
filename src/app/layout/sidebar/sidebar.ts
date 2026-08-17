@@ -1,7 +1,8 @@
 import {
   Component,
   inject,
-  signal
+  signal,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -25,6 +26,7 @@ interface SidebarItem {
     RouterLinkActive
   ],
   templateUrl: './sidebar.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './sidebar.scss'
 })
 export class SidebarComponent {
