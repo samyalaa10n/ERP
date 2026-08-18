@@ -1,18 +1,9 @@
 <div class="user-menu-wrapper">
 
-  <!-- =========================================
-       USER BUTTON
-       ========================================= -->
-
-  <div
+  <button
+    type="button"
     class="user-profile"
-    (click)="userMenu.toggle($event)"
-    tabindex="0"
-    role="button"
-    aria-haspopup="true"
-    >
-
-    <!-- Avatar -->
+    (click)="toggleUserMenu()">
 
     <p-avatar
       [label]="user.initials"
@@ -20,11 +11,7 @@
       styleClass="user-avatar">
     </p-avatar>
 
-
-    <!-- User Information -->
-
     <div class="user-info">
-
       <span class="user-name">
         {{ user.name }}
       </span>
@@ -32,29 +19,46 @@
       <span class="user-role">
         {{ languageService.translate(user.role) }}
       </span>
+    </div>
+
+    <i class="pi pi-chevron-down user-arrow"></i>
+
+  </button>
+
+  @if (menuOpen()) {
+
+    <div class="user-dropdown">
+
+      <button type="button" (click)="profile.emit()">
+        <i class="pi pi-user"></i>
+        {{ languageService.translate('user.profile') }}
+      </button>
+
+      <button type="button" (click)="personalData.emit()">
+        <i class="pi pi-id-card"></i>
+        {{ languageService.translate('user.personalData') }}
+      </button>
+
+      <button type="button" (click)="settings.emit()">
+        <i class="pi pi-cog"></i>
+        {{ languageService.translate('common.settings') }}
+      </button>
+
+      <div class="menu-separator"></div>
+
+      <button
+        type="button"
+        class="logout-item"
+        (click)="logout.emit()">
+
+        <i class="pi pi-sign-out"></i>
+
+        {{ languageService.translate('auth.logout') }}
+
+      </button>
 
     </div>
 
-
-    <!-- Arrow -->
-
-    <i
-      class="pi pi-chevron-down user-arrow">
-    </i>
-
-  </div>
-
-
-  <!-- =========================================
-       USER MENU
-       ========================================= -->
-
-  <p-menu
-    #userMenu
-    [model]="menuItems()"
-    [popup]="true"
-    styleClass="user-dropdown">
-
-  </p-menu>
+  }
 
 </div>

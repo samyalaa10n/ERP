@@ -25,7 +25,8 @@
     "previous": "السابق",
     "submit": "إرسال",
     "reset": "إعادة تعيين",
-    "confirm": "تأكيد"
+    "confirm": "تأكيد",
+    "settings": "الإعدادات"
   },
   "menu": {
     "dashboard": "لوحة التحكم",
@@ -61,7 +62,8 @@
     "rememberMe": "تذكرني",
     "forgotPassword": "نسيت كلمة المرور",
     "loginButton": "دخول",
-    "logout": "تسجيل الخروج"
+    "logout": "تسجيل الخروج",
+    "administrator": "مدير النظام"
   },
   "language": {
     "english": "الإنجليزية",
@@ -75,5 +77,9 @@
     "error": "حدث خطأ ما",
     "noData": "لا توجد بيانات",
     "confirmDelete": "هل أنت متأكد أنك تريد حذف هذا العنصر؟"
+  },
+  "user": {
+    "profile": "الملف الشخصي",
+    "personalData": "البيانات الشخصية"
   }
 }

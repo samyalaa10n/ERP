@@ -727,3 +727,123 @@ body {
   background:
     var(--app-surface-2);
 }
+
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY
+   ========================================================= */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   GENERAL TEXT
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   PRIME NG INPUTS
+   ========================================================= */
+
+.p-inputtext,
+.p-select,
+.p-multiselect,
+.p-inputnumber-input,
+.p-textarea {
+  font-size: 16px !important;
+}
+
+
+/* Select */
+
+.p-select-label {
+  font-size: 16px !important;
+}
+
+
+/* Select Options */
+
+.p-select-option {
+  font-size: 16px !important;
+}
+
+
+/* MultiSelect */
+
+.p-multiselect-label {
+  font-size: 16px !important;
+}
+
+.p-multiselect-option {
+  font-size: 16px !important;
+}
+
+
+/* =========================================================
+   PRIME NG BUTTON
+   ========================================================= */
+
+.p-button {
+  font-size: 16px !important;
+}
+
+
+/* =========================================================
+   DATA TABLE
+   ========================================================= */
+
+.p-datatable {
+
+  .p-datatable-thead > tr > th {
+    font-size: 16px !important;
+  }
+
+  .p-datatable-tbody > tr > td {
+    font-size: 16px !important;
+  }
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.p-menu {
+
+  .p-menu-item-link {
+    font-size: 16px !important;
+  }
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+label {
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   SMALL TEXT
+   ========================================================= */
+
+small {
+  font-size: 14px;
+}
