@@ -10,7 +10,7 @@ import {
 
 import { Avatar } from 'primeng/avatar';
 
-import { LanguageService } from '../../../core/services/language-service';
+import { LanguageService } from '../../../core/services/language.service';
 
 @Component({
   selector: 'app-user-menu',

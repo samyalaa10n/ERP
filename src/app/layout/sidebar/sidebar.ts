@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { LanguageService } from '../../core/services/language-service';
+import { LanguageService } from '../../core/services/language.service';
 
 
 
@@ -59,7 +59,7 @@ export class SidebarComponent {
 
     {
       label: 'menu.purchases',
-      icon: 'pi pi-wallet',
+      icon: 'pi pi-shopping-bag',
       route: '/purchases'
     },
 
@@ -84,6 +84,41 @@ export class SidebarComponent {
   ];
 
 
+  readonly retailItems: SidebarItem[] = [
+
+    {
+      label: 'menu.pos',
+      icon: 'pi pi-desktop',
+      route: '/pos'
+    },
+
+    {
+      label: 'menu.cashiers',
+      icon: 'pi pi-calculator',
+      route: '/cashiers'
+    },
+
+    {
+      label: 'menu.branches',
+      icon: 'pi pi-building',
+      route: '/branches'
+    },
+
+    {
+      label: 'menu.showrooms',
+      icon: 'pi pi-shop',
+      route: '/showrooms'
+    },
+
+    {
+      label: 'menu.warehouses',
+      icon: 'pi pi-database',
+      route: '/warehouses'
+    }
+
+  ];
+
+
   readonly businessItems: SidebarItem[] = [
 
     {
@@ -99,15 +134,91 @@ export class SidebarComponent {
     },
 
     {
+      label: 'menu.expenses',
+      icon: 'pi pi-money-bill',
+      route: '/expenses'
+    },
+
+    {
+      label: 'menu.assets',
+      icon: 'pi pi-briefcase',
+      route: '/assets'
+    },
+
+    {
+      label: 'menu.costCenters',
+      icon: 'pi pi-sitemap',
+      route: '/cost-centers'
+    }
+
+  ];
+
+
+  readonly operationsItems: SidebarItem[] = [
+
+    {
+      label: 'menu.manufacturing',
+      icon: 'pi pi-cog',
+      route: '/manufacturing'
+    },
+
+    {
+      label: 'menu.production',
+      icon: 'pi pi-sliders-h',
+      route: '/production'
+    },
+
+    {
+      label: 'menu.maintenance',
+      icon: 'pi pi-wrench',
+      route: '/maintenance'
+    },
+
+    {
+      label: 'menu.services',
+      icon: 'pi pi-cog',
+      route: '/services'
+    },
+
+    {
+      label: 'menu.projects',
+      icon: 'pi pi-briefcase',
+      route: '/projects'
+    }
+
+  ];
+
+
+  readonly restaurantItems: SidebarItem[] = [
+
+    {
       label: 'menu.restaurant',
       icon: 'pi pi-building',
       route: '/restaurant'
     },
 
     {
-      label: 'menu.manufacturing',
-      icon: 'pi pi-cog',
-      route: '/manufacturing'
+      label: 'menu.tables',
+      icon: 'pi pi-table',
+      route: '/restaurant/tables'
+    },
+
+    {
+      label: 'menu.kitchen',
+      icon: 'pi pi-th-large',
+      route: '/restaurant/kitchen'
+    },
+
+    {
+      label: 'menu.menuManagement',
+      icon: 'pi pi-list',
+      route: '/restaurant/menu'
+    },
+
+    {
+      label: 'menu.recipes',
+      icon: 'pi pi-book',
+      route: '/restaurant/recipes'
     }
 
   ];
@@ -119,6 +230,53 @@ export class SidebarComponent {
       label: 'menu.reports',
       icon: 'pi pi-chart-bar',
       route: '/reports'
+    },
+
+    {
+      label: 'menu.analytics',
+      icon: 'pi pi-chart-line',
+      route: '/analytics'
+    },
+
+    {
+      label: 'menu.dashboardAnalytics',
+      icon: 'pi pi-chart-pie',
+      route: '/analytics/dashboard'
+    }
+
+  ];
+
+
+  readonly administrationItems: SidebarItem[] = [
+
+    {
+      label: 'menu.users',
+      icon: 'pi pi-users',
+      route: '/users'
+    },
+
+    {
+      label: 'menu.roles',
+      icon: 'pi pi-shield',
+      route: '/roles'
+    },
+
+    {
+      label: 'menu.permissions',
+      icon: 'pi pi-lock',
+      route: '/permissions'
+    },
+
+    {
+      label: 'menu.company',
+      icon: 'pi pi-building',
+      route: '/company'
+    },
+
+    {
+      label: 'menu.settings',
+      icon: 'pi pi-cog',
+      route: '/settings'
     }
 
   ];

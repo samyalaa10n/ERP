@@ -9,11 +9,12 @@ import { CommonModule } from '@angular/common';
 import { SelectModule } from 'primeng/select';
 import { ButtonModule } from 'primeng/button';
 import { AvatarModule } from 'primeng/avatar';
-import { LanguageService } from '../../core/services/language-service';
+import { LanguageService } from '../../core/services/language.service';
 import { FormsModule } from '@angular/forms';
 import { ComboBox } from "../../shared/components/combo-box/combo-box";
 import { AppLanguageCode } from '../../core/localization/app-languages';
 import { UserMenu } from "../../shared/components/user-menu/user-menu";
+import { SharedDataService } from '../../shared/services/shared-data.service';
 
 
 @Component({
@@ -37,11 +38,14 @@ export class Navbar {
 
   readonly languageService =
     inject(LanguageService);
+  readonly sharedDataService =
+    inject(SharedDataService);
 
 
   languages: any[] =
     Array.from(this.languageService.languages);
 
+     
 
   async changeLanguage(
     language: AppLanguageCode

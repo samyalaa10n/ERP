@@ -1,0 +1,370 @@
+<div class="sales-page">
+
+    <!-- =========================================
+       PAGE HEADER
+  ========================================== -->
+
+    <div class="page-header">
+
+        <div class="page-heading">
+
+            <div class="page-icon">
+                <i class="pi pi-shopping-cart"></i>
+            </div>
+
+            <div>
+
+                <h1>
+                    {{ translate('sales.title') }}
+                </h1>
+
+                <span>
+                    {{ translate('sales.subtitle') }}
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="page-actions">
+
+            <p-button [label]="translate('sales.newInvoice')" icon="pi pi-plus" (onClick)="newInvoice()">
+            </p-button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+       STATISTICS
+  ========================================== -->
+
+    <div class="sales-stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon sales">
+                <i class="pi pi-chart-line"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    {{ translate('sales.totalSales') }}
+                </span>
+
+                <strong>
+                    {{ totalSales | number:'1.2-2' }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon paid">
+                <i class="pi pi-check-circle"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    {{ translate('sales.paid') }}
+                </span>
+
+                <strong>
+                    {{ paidAmount | number:'1.2-2' }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon pending">
+                <i class="pi pi-clock"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    {{ translate('sales.pending') }}
+                </span>
+
+                <strong>
+                    {{ pendingAmount | number:'1.2-2' }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon returns">
+                <i class="pi pi-refresh"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    {{ translate('sales.returns') }}
+                </span>
+
+                <strong>
+                    {{ returnsAmount | number:'1.2-2' }}
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+       SALES TABLE CARD
+  ========================================== -->
+
+    <div class="sales-card">
+
+
+        <!-- TOOLBAR -->
+
+        <div class="sales-toolbar">
+
+            <div class="search-box">
+
+                <i class="pi pi-search"></i>
+
+                <input pInputText type="text" [placeholder]="translate('sales.search')" [(ngModel)]="searchText"
+                    (input)="filterSales()" />
+
+            </div>
+
+
+            <div class="filters">
+
+
+                <!-- FROM DATE -->
+                <p-datepicker [(ngModel)]="dateFrom" (ngModelChange)="filterSales()" [showIcon]="true"
+                    [showClear]="true" [placeholder]="translate('sales.dateFrom')" dateFormat="dd/mm/yy"
+                    [maxDate]="dateTo || undefined" styleClass="sales-date-filter">
+                </p-datepicker>
+
+
+                <!-- TO DATE -->
+                <p-datepicker [(ngModel)]="dateTo" (ngModelChange)="filterSales()" [showIcon]="true" [showClear]="true"
+                    [placeholder]="translate('sales.dateTo')" dateFormat="dd/mm/yy" [minDate]="dateFrom || undefined"
+                    styleClass="sales-date-filter">
+                </p-datepicker>
+
+                <p-select [options]="customers" optionLabel="name" optionValue="id"
+                    [placeholder]="translate('sales.customer')" [(ngModel)]="selectedCustomer"
+                    (ngModelChange)="filterSales()" [showClear]="true">
+                </p-select>
+
+
+                <p-select [options]="statuses" optionLabel="label" [placeholder]="translate('sales.statuskind')"
+                    [(ngModel)]="selectedStatus" (ngModelChange)="filterSales()" [showClear]="true">
+                    <ng-template #selectedItem let-selected>
+                        @if (selected) {
+                        {{ translate(selected.tranclate) }}
+                        }
+                    </ng-template>
+
+                    <ng-template #item let-item>
+
+                        {{ translate(item.tranclate) }}
+                    </ng-template>
+                </p-select>
+
+
+                <p-button icon="pi pi-filter-slash" [text]="true" [rounded]="true" [title]="translate('common.clear')"
+                    (onClick)="clearFilters()">
+                </p-button>
+
+            </div>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <p-table [value]="filteredSales" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,25,50]"
+            [loading]="loading" responsiveLayout="scroll" styleClass="sales-table">
+
+            <ng-template #header>
+
+                <tr>
+
+                    <th>
+                        {{ translate('sales.invoiceNumber') }}
+                    </th>
+
+                    <th>
+                        {{ translate('sales.customer') }}
+                    </th>
+
+                    <th>
+                        {{ translate('sales.date') }}
+                    </th>
+
+                    <th>
+                        {{ translate('sales.paymentMethod') }}
+                    </th>
+
+                    <th>
+                        {{ translate('sales.total') }}
+                    </th>
+
+                    <th>
+                        {{ translate('sales.statuskind') }}
+                    </th>
+
+                    <th class="actions-column">
+                        {{ translate('common.actions') }}
+                    </th>
+
+                </tr>
+
+            </ng-template>
+
+
+            <ng-template #body let-sale>
+
+                <tr>
+
+                    <td>
+
+                        <span class="invoice-number">
+                            {{ sale.invoiceNumber }}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <div class="customer-cell">
+
+                            <div class="customer-avatar">
+                                {{ sale.customerInitials }}
+                            </div>
+
+                            <span>
+                                {{ sale.customer }}
+                            </span>
+
+                        </div>
+
+                    </td>
+
+
+                    <td>
+                        {{ sale.date }}
+                    </td>
+
+
+                    <td>
+
+                        <span class="payment-method">
+
+                            <i [class]="getPaymentIcon(sale.paymentMethod)">
+                            </i>
+
+                            {{ sale.paymentMethod }}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <strong class="sale-total">
+                            {{ sale.total | number:'1.2-2' }}
+                        </strong>
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="status-badge" [class]="getStatusClass(sale.status)">
+
+                            <i [class]="getStatusIcon(sale.status)"></i>
+
+                            {{ translate(sale.status) }}
+
+                        </span>
+
+                    </td>
+
+
+                    <td class="actions-column">
+
+                        <div class="row-actions">
+
+                            <button type="button" class="row-action" [title]="translate('common.view')"
+                                (click)="viewSale(sale)">
+
+                                <i class="pi pi-eye"></i>
+
+                            </button>
+
+
+                            <button type="button" class="row-action" [title]="translate('common.edit')"
+                                (click)="editSale(sale)">
+
+                                <i class="pi pi-pencil"></i>
+
+                            </button>
+
+
+                            <button type="button" class="row-action danger" [title]="translate('common.delete')"
+                                (click)="deleteSale(sale)">
+
+                                <i class="pi pi-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </ng-template>
+
+
+            <ng-template #emptymessage>
+
+                <tr>
+
+                    <td colspan="7" class="empty-state">
+
+                        <i class="pi pi-inbox"></i>
+
+                        <span>
+                            {{ translate('messages.noData') }}
+                        </span>
+
+                    </td>
+
+                </tr>
+
+            </ng-template>
+
+        </p-table>
+
+    </div>
+
+</div>

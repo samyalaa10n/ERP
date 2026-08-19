@@ -55,171 +55,277 @@
   <!-- NAVIGATION -->
   <!-- ========================================= -->
 
-  <nav class="sidebar-navigation">
+<nav class="sidebar-navigation">
 
+  <!-- =========================================
+       MAIN
+  ========================================== -->
 
-    <!-- MAIN -->
+  <div class="sidebar-section">
 
-    <div class="sidebar-section">
+    @if (!collapsed()) {
+      <div class="sidebar-section-title">
+        MAIN
+      </div>
+    }
 
-      @if (!collapsed()) {
+    @for (item of mainItems; track item.label) {
 
-        <div class="sidebar-section-title">
-          MAIN
-        </div>
+      <a
+        class="sidebar-item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{
+          exact: item.route === '/dashboard'
+        }"
+        [title]="collapsed() ? translate(item.label) : ''"
+      >
 
-      }
+        <span class="sidebar-item-icon">
+          <i [class]="item.icon"></i>
+        </span>
 
-
-      @for (
-        item of mainItems;
-        track item.label
-      ) {
-
-        <a
-          class="sidebar-item"
-          [routerLink]="item.route"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{
-            exact: item.route === '/dashboard'
-          }"
-          [title]="
-            collapsed()
-              ? translate(item.label)
-              : ''
-          "
-        >
-
-          <span class="sidebar-item-icon">
-
-            <i [class]="item.icon"></i>
-
+        @if (!collapsed()) {
+          <span class="sidebar-item-label">
+            {{ translate(item.label) }}
           </span>
+        }
+
+      </a>
+
+    }
+
+  </div>
 
 
-          @if (!collapsed()) {
+  <!-- =========================================
+       RETAIL
+  ========================================== -->
 
-            <span class="sidebar-item-label">
+  <div class="sidebar-section">
 
-              {{ translate(item.label) }}
+    @if (!collapsed()) {
+      <div class="sidebar-section-title">
+        RETAIL
+      </div>
+    }
 
-            </span>
+    @for (item of retailItems; track item.label) {
 
-          }
+      <a
+        class="sidebar-item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [title]="collapsed() ? translate(item.label) : ''"
+      >
 
-        </a>
+        <span class="sidebar-item-icon">
+          <i [class]="item.icon"></i>
+        </span>
 
-      }
-
-    </div>
-
-
-    <!-- BUSINESS -->
-
-    <div class="sidebar-section">
-
-      @if (!collapsed()) {
-
-        <div class="sidebar-section-title">
-          BUSINESS
-        </div>
-
-      }
-
-
-      @for (
-        item of businessItems;
-        track item.label
-      ) {
-
-        <a
-          class="sidebar-item"
-          [routerLink]="item.route"
-          routerLinkActive="active"
-          [title]="
-            collapsed()
-              ? translate(item.label)
-              : ''
-          "
-        >
-
-          <span class="sidebar-item-icon">
-
-            <i [class]="item.icon"></i>
-
+        @if (!collapsed()) {
+          <span class="sidebar-item-label">
+            {{ translate(item.label) }}
           </span>
+        }
+
+      </a>
+
+    }
+
+  </div>
 
 
-          @if (!collapsed()) {
+  <!-- =========================================
+       FINANCE & HR
+  ========================================== -->
 
-            <span class="sidebar-item-label">
+  <div class="sidebar-section">
 
-              {{ translate(item.label) }}
+    @if (!collapsed()) {
+      <div class="sidebar-section-title">
+        FINANCE & HR
+      </div>
+    }
 
-            </span>
+    @for (item of businessItems; track item.label) {
 
-          }
+      <a
+        class="sidebar-item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [title]="collapsed() ? translate(item.label) : ''"
+      >
 
-        </a>
+        <span class="sidebar-item-icon">
+          <i [class]="item.icon"></i>
+        </span>
 
-      }
-
-    </div>
-
-
-    <!-- ANALYTICS -->
-
-    <div class="sidebar-section">
-
-      @if (!collapsed()) {
-
-        <div class="sidebar-section-title">
-          ANALYTICS
-        </div>
-
-      }
-
-
-      @for (
-        item of analyticsItems;
-        track item.label
-      ) {
-
-        <a
-          class="sidebar-item"
-          [routerLink]="item.route"
-          routerLinkActive="active"
-          [title]="
-            collapsed()
-              ? translate(item.label)
-              : ''
-          "
-        >
-
-          <span class="sidebar-item-icon">
-
-            <i [class]="item.icon"></i>
-
+        @if (!collapsed()) {
+          <span class="sidebar-item-label">
+            {{ translate(item.label) }}
           </span>
+        }
+
+      </a>
+
+    }
+
+  </div>
 
 
-          @if (!collapsed()) {
+  <!-- =========================================
+       OPERATIONS
+  ========================================== -->
 
-            <span class="sidebar-item-label">
+  <div class="sidebar-section">
 
-              {{ translate(item.label) }}
+    @if (!collapsed()) {
+      <div class="sidebar-section-title">
+        OPERATIONS
+      </div>
+    }
 
-            </span>
+    @for (item of operationsItems; track item.label) {
 
-          }
+      <a
+        class="sidebar-item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [title]="collapsed() ? translate(item.label) : ''"
+      >
 
-        </a>
+        <span class="sidebar-item-icon">
+          <i [class]="item.icon"></i>
+        </span>
 
-      }
+        @if (!collapsed()) {
+          <span class="sidebar-item-label">
+            {{ translate(item.label) }}
+          </span>
+        }
 
-    </div>
+      </a>
 
-  </nav>
+    }
+
+  </div>
+
+
+  <!-- =========================================
+       RESTAURANT
+  ========================================== -->
+
+  <div class="sidebar-section">
+
+    @if (!collapsed()) {
+      <div class="sidebar-section-title">
+        RESTAURANT
+      </div>
+    }
+
+    @for (item of restaurantItems; track item.label) {
+
+      <a
+        class="sidebar-item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [title]="collapsed() ? translate(item.label) : ''"
+      >
+
+        <span class="sidebar-item-icon">
+          <i [class]="item.icon"></i>
+        </span>
+
+        @if (!collapsed()) {
+          <span class="sidebar-item-label">
+            {{ translate(item.label) }}
+          </span>
+        }
+
+      </a>
+
+    }
+
+  </div>
+
+
+  <!-- =========================================
+       ANALYTICS
+  ========================================== -->
+
+  <div class="sidebar-section">
+
+    @if (!collapsed()) {
+      <div class="sidebar-section-title">
+        ANALYTICS
+      </div>
+    }
+
+    @for (item of analyticsItems; track item.label) {
+
+      <a
+        class="sidebar-item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [title]="collapsed() ? translate(item.label) : ''"
+      >
+
+        <span class="sidebar-item-icon">
+          <i [class]="item.icon"></i>
+        </span>
+
+        @if (!collapsed()) {
+          <span class="sidebar-item-label">
+            {{ translate(item.label) }}
+          </span>
+        }
+
+      </a>
+
+    }
+
+  </div>
+
+
+  <!-- =========================================
+       ADMINISTRATION
+  ========================================== -->
+
+  <div class="sidebar-section">
+
+    @if (!collapsed()) {
+      <div class="sidebar-section-title">
+        ADMINISTRATION
+      </div>
+    }
+
+    @for (item of administrationItems; track item.label) {
+
+      <a
+        class="sidebar-item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [title]="collapsed() ? translate(item.label) : ''"
+      >
+
+        <span class="sidebar-item-icon">
+          <i [class]="item.icon"></i>
+        </span>
+
+        @if (!collapsed()) {
+          <span class="sidebar-item-label">
+            {{ translate(item.label) }}
+          </span>
+        }
+
+      </a>
+
+    }
+
+  </div>
+
+</nav>
 
 
   <!-- ========================================= -->

@@ -4,10 +4,11 @@ import { Button } from "./shared/components/button/button";
 
 import { SidebarComponent } from "./layout/sidebar/sidebar";
 import { Navbar } from './layout/navbar/navbar';
+import { Sales } from "./features/sales/sales";
 
 @Component({
   selector: 'app-root',
-  imports: [ RouterOutlet, Navbar, SidebarComponent],
+  imports: [RouterOutlet, Navbar, SidebarComponent, Sales],
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss'

@@ -15,7 +15,7 @@
      BACKGROUND
      ------------------------------------------------------- */
 
-  --app-bg: #0a0e1a;
+  --app-bg          : #0a0e1a;
   --app-bg-secondary: #0f1524;
 
 
@@ -23,8 +23,8 @@
      SURFACE
      ------------------------------------------------------- */
 
-  --app-surface: #121827;
-  --app-surface-2: #1c2535;
+  --app-surface      : #121827;
+  --app-surface-2    : #1c2535;
   --app-surface-hover: #222e40;
 
 
@@ -32,7 +32,7 @@
      BORDER
      ------------------------------------------------------- */
 
-  --app-border: #263449;
+  --app-border      : #263449;
   --app-border-hover: #3c8fc3;
 
 
@@ -40,16 +40,16 @@
      PRIMARY
      ------------------------------------------------------- */
 
-  --app-primary: #2496e8;
+  --app-primary      : #2496e8;
   --app-primary-hover: #3caef5;
-  --app-primary-dark: #1269a8;
+  --app-primary-dark : #1269a8;
 
 
   /* -------------------------------------------------------
      TECH ACCENT
      ------------------------------------------------------- */
 
-  --app-cyan: #22d3ee;
+  --app-cyan     : #22d3ee;
   --app-cyan-dark: #0891b2;
 
 
@@ -57,7 +57,7 @@
      SECONDARY
      ------------------------------------------------------- */
 
-  --app-purple: #9b5de5;
+  --app-purple      : #9b5de5;
   --app-purple-light: #c084fc;
 
 
@@ -67,25 +67,25 @@
 
   --app-success: #20c997;
   --app-warning: #f59e0b;
-  --app-danger: #f4776c;
-  --app-info: #38bdf8;
+  --app-danger : #f4776c;
+  --app-info   : #38bdf8;
 
 
   /* -------------------------------------------------------
      TEXT
      ------------------------------------------------------- */
 
-  --app-text: #e5e7eb;
+  --app-text          : #e5e7eb;
   --app-text-secondary: #9ca3af;
-  --app-text-muted: #64748b;
+  --app-text-muted    : #64748b;
 
 
   /* -------------------------------------------------------
      GLOW
      ------------------------------------------------------- */
 
-  --glow-blue: rgba(36, 150, 232, 0.25);
-  --glow-cyan: rgba(34, 211, 238, 0.20);
+  --glow-blue  : rgba(36, 150, 232, 0.25);
+  --glow-cyan  : rgba(34, 211, 238, 0.20);
   --glow-purple: rgba(155, 93, 229, 0.20);
 
 
@@ -93,7 +93,7 @@
      RADIUS
      ------------------------------------------------------- */
 
-  --app-radius: 8px;
+  --app-radius   : 8px;
   --app-radius-lg: 10px;
 
 
@@ -112,24 +112,20 @@
 html,
 body {
 
-  margin: 0;
+  margin : 0;
   padding: 0;
 
-  width: 100%;
+  width     : 100%;
   min-height: 100%;
 
   background:
-    radial-gradient(
-      circle at 20% 10%,
+    radial-gradient(circle at 20% 10%,
       rgba(36, 150, 232, 0.07),
-      transparent 35%
-    ),
+      transparent 35%),
 
-    radial-gradient(
-      circle at 80% 20%,
+    radial-gradient(circle at 80% 20%,
       rgba(155, 93, 229, 0.05),
-      transparent 30%
-    ),
+      transparent 30%),
 
     var(--app-bg);
 
@@ -149,7 +145,7 @@ body {
    ========================================================= */
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width : 6px;
   height: 6px;
 }
 
@@ -179,11 +175,9 @@ body {
 .app-card {
 
   background:
-    linear-gradient(
-      145deg,
+    linear-gradient(145deg,
       rgba(28, 37, 53, 0.96),
-      rgba(15, 21, 36, 0.96)
-    );
+      rgba(15, 21, 36, 0.96));
 
   border:
     1px solid var(--app-border);
@@ -232,33 +226,27 @@ body {
 .p-button:not(.p-button-text):not(.p-button-outlined) {
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       var(--app-primary),
-      #1675bd
-    ) !important;
+      #1675bd) !important;
 
   border-color:
     var(--app-primary) !important;
 
   box-shadow:
-    0 0 12px
-    rgba(36, 150, 232, 0.15);
+    0 0 12px rgba(36, 150, 232, 0.15);
 }
 
 
 .p-button:not(.p-button-text):not(.p-button-outlined):hover {
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       var(--app-primary-hover),
-      var(--app-primary)
-    ) !important;
+      var(--app-primary)) !important;
 
   box-shadow:
-    0 0 18px
-    rgba(36, 150, 232, 0.30);
+    0 0 18px rgba(36, 150, 232, 0.30);
 }
 
 
@@ -305,11 +293,9 @@ body {
     var(--app-primary) !important;
 
   box-shadow:
-    0 0 0 2px
-      rgba(36, 150, 232, 0.12),
+    0 0 0 2px rgba(36, 150, 232, 0.12),
 
-    0 0 15px
-      rgba(36, 150, 232, 0.08) !important;
+    0 0 15px rgba(36, 150, 232, 0.08) !important;
 }
 
 
@@ -322,11 +308,9 @@ body {
   min-height: 38px;
 
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(18, 24, 39, 0.96),
-      rgba(15, 21, 36, 0.96)
-    ) !important;
+      rgba(15, 21, 36, 0.96)) !important;
 
   border:
     1px solid var(--app-border) !important;
@@ -338,8 +322,7 @@ body {
     var(--app-text) !important;
 
   box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.025);
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
 
   transition:
     border-color var(--app-transition),
@@ -422,11 +405,9 @@ body {
     var(--app-border-hover) !important;
 
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(28, 37, 53, 0.98),
-      rgba(15, 21, 36, 0.98)
-    ) !important;
+      rgba(15, 21, 36, 0.98)) !important;
 }
 
 
@@ -440,11 +421,9 @@ body {
     var(--app-primary) !important;
 
   box-shadow:
-    0 0 0 2px
-      rgba(36, 150, 232, 0.10),
+    0 0 0 2px rgba(36, 150, 232, 0.10),
 
-    0 0 18px
-      rgba(36, 150, 232, 0.10) !important;
+    0 0 18px rgba(36, 150, 232, 0.10) !important;
 }
 
 
@@ -527,11 +506,9 @@ body {
 .p-select-option-selected {
 
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgba(36, 150, 232, 0.16),
-      rgba(34, 211, 238, 0.06)
-    ) !important;
+      rgba(34, 211, 238, 0.06)) !important;
 
   color:
     #ffffff !important;
@@ -540,22 +517,17 @@ body {
     2px solid var(--app-primary);
 
   box-shadow:
-    inset 0 0 15px
-    rgba(36, 150, 232, 0.04);
+    inset 0 0 15px rgba(36, 150, 232, 0.04);
 }
 
 
-.p-select-option-selected
-.p-select-option-icon {
+.p-select-option-selected .p-select-option-icon {
 
   color:
     var(--app-cyan) !important;
 
   filter:
-    drop-shadow(
-      0 0 5px
-      rgba(34, 211, 238, 0.5)
-    );
+    drop-shadow(0 0 5px rgba(34, 211, 238, 0.5));
 }
 
 
@@ -604,8 +576,7 @@ body {
     var(--app-primary) !important;
 
   box-shadow:
-    0 0 0 2px
-      rgba(36, 150, 232, 0.10) !important;
+    0 0 0 2px rgba(36, 150, 232, 0.10) !important;
 }
 
 
@@ -677,7 +648,7 @@ body {
 }
 
 
-.p-datatable .p-datatable-thead > tr > th {
+.p-datatable .p-datatable-thead>tr>th {
 
   background:
     var(--app-bg-secondary);
@@ -702,7 +673,7 @@ body {
 }
 
 
-.p-datatable .p-datatable-tbody > tr {
+.p-datatable .p-datatable-tbody>tr {
 
   background:
     var(--app-surface);
@@ -715,14 +686,14 @@ body {
 }
 
 
-.p-datatable .p-datatable-tbody > tr > td {
+.p-datatable .p-datatable-tbody>tr>td {
 
   border-color:
     rgba(38, 52, 73, 0.7);
 }
 
 
-.p-datatable .p-datatable-tbody > tr:hover {
+.p-datatable .p-datatable-tbody>tr:hover {
 
   background:
     var(--app-surface-2);
@@ -738,7 +709,7 @@ html {
 }
 
 body {
-  font-size: 16px;
+  font-size  : 16px;
   line-height: 1.5;
 }
 
@@ -752,7 +723,7 @@ input,
 textarea,
 select {
   font-family: inherit;
-  font-size: 16px;
+  font-size  : 16px;
 }
 
 
@@ -809,15 +780,27 @@ select {
 
 .p-datatable {
 
-  .p-datatable-thead > tr > th {
+  .p-datatable-thead>tr>th {
     font-size: 16px !important;
   }
 
-  .p-datatable-tbody > tr > td {
+  .p-datatable-tbody>tr>td {
     font-size: 16px !important;
   }
 }
 
+
+.p-paginator {
+  background-color: var(--app-bg-secondary) !important ;
+  color           : white !important;
+  border          : none  !important;
+}
+
+.p-datepicker-dropdown {
+  background-color: var(--app-bg-secondary) !important;
+  color: white !important;
+  border: none !important;
+}
 
 /* =========================================================
    MENU

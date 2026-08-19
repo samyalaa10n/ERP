@@ -35,11 +35,33 @@
     "inventory": "Inventory",
     "customers": "Customers",
     "suppliers": "Suppliers",
+    "pos": "Point of Sale",
+    "cashiers": "Cashiers",
+    "branches": "Branches",
+    "showrooms": "Showrooms",
+    "warehouses": "Warehouses",
     "accounting": "Accounting",
     "hr": "Human Resources",
-    "restaurant": "Restaurant",
+    "expenses": "Expenses",
+    "assets": "Fixed Assets",
+    "costCenters": "Cost Centers",
     "manufacturing": "Manufacturing",
+    "production": "Production",
+    "maintenance": "Maintenance",
+    "services": "Services",
+    "projects": "Projects",
+    "restaurant": "Restaurant",
+    "tables": "Tables",
+    "kitchen": "Kitchen",
+    "menuManagement": "Menu Management",
+    "recipes": "Recipes",
     "reports": "Reports",
+    "analytics": "Analytics",
+    "dashboardAnalytics": "Analytics Dashboard",
+    "users": "Users",
+    "roles": "Roles",
+    "permissions": "Permissions",
+    "company": "Company",
     "settings": "Settings"
   },
   "dashboard": {
@@ -81,5 +103,28 @@
   "user": {
     "profile": "Profile",
     "personalData": "Personal Data"
+  },
+  "sales": {
+    "title": "Sales",
+    "subtitle": "Sales management, invoices and orders",
+    "newInvoice": "New Invoice",
+    "totalSales": "Total Sales",
+    "paid": "Paid",
+    "pending": "Pending",
+    "returns": "Returns",
+    "search": "Search invoices...",
+    "customer": "Customer",
+    "date": "Date",
+    "dateFrom": "From Date",
+    "dateTo": "To Date",
+    "invoiceNumber": "Invoice",
+    "paymentMethod": "Payment Method",
+    "total": "Total",
+    "statuskind": "status",
+    "status": {
+      "paid": "Paid",
+      "pending": "Pending",
+      "cancelled": "Cancelled"
+    }
   }
 }
